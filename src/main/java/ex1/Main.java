@@ -1,6 +1,5 @@
 package ex1;
 
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
@@ -14,7 +13,6 @@ public class Main {
         IntegerProperty number1 = new SimpleIntegerProperty();
         IntegerProperty number2 = new SimpleIntegerProperty();
         IntegerProperty sum = new SimpleIntegerProperty();
-        // sum.bind(Bindings.add(number1, number2));
         sum.bind(number1.add(number2));
         number1.set(Integer.parseInt(args[0]));
         number2.set(Integer.parseInt(args[1]));
