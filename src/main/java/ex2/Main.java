@@ -1,7 +1,6 @@
 package ex2;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
@@ -15,8 +14,7 @@ public class Main {
         DoubleProperty a = new SimpleDoubleProperty();
         DoubleProperty b = new SimpleDoubleProperty();
         DoubleProperty c = new SimpleDoubleProperty();
-        BooleanProperty result = new SimpleBooleanProperty();
-        result.bind(a.multiply(a).add(b.multiply(b)).isEqualTo(c.multiply(c)));
+        BooleanBinding result = a.multiply(a).add(b.multiply(b)).isEqualTo(c.multiply(c));
         a.set(Integer.parseInt(args[0]));
         b.set(Integer.parseInt(args[1]));
         c.set(Integer.parseInt(args[2]));
